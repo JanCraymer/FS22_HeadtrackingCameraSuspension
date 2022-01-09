@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="61">
+    <author>CptCray</author>
+    <version>1.0.0.0</version>
+    <title>
+        <en>Headtracking Camera Suspension</en>
+    </title>
+    <description>
+        <en><![CDATA[Headtracking Camera Suspension]]></en>
+    </description>
+    <iconFilename>icon.dds</iconFilename>
+    <multiplayer supported="true"/>
+
+    <extraSourceFiles>
+        <sourceFile filename="HeadtrackingCameraSuspensionRegister.lua"/>
+    </extraSourceFiles>
+</modDesc>
