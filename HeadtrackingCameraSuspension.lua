@@ -1,20 +1,5 @@
 HeadtrackingCameraSuspension = {}
 
-function HeadtrackingCameraSuspension.prerequisitesPresent(specializations)
-    return true
-end
-
-function HeadtrackingCameraSuspension.registerEventListeners(vehicleType)
-    -- print("HeadtrackingCameraSuspension.registerEventListeners");    
-    SpecializationUtil.registerEventListener(vehicleType, "onLoad", HeadtrackingCameraSuspension);
-end
-
-
-function HeadtrackingCameraSuspension:onLoad(savegame)
-    -- print("HeadtrackingCameraSuspension:onLoad")
-    VehicleCamera.onActiveCameraSuspensionSettingChanged = Utils.overwrittenFunction(VehicleCamera.onActiveCameraSuspensionSettingChanged, HeadtrackingCameraSuspension.onActiveCameraSuspensionSettingChanged)
-end
-
 ---Called when camera suspension setting has changed
 -- @param bool newState new setting state
 function HeadtrackingCameraSuspension:onActiveCameraSuspensionSettingChanged(superFunc, newState)
@@ -37,3 +22,5 @@ function HeadtrackingCameraSuspension:onActiveCameraSuspensionSettingChanged(sup
         end
     end
 end
+
+VehicleCamera.onActiveCameraSuspensionSettingChanged = Utils.overwrittenFunction(VehicleCamera.onActiveCameraSuspensionSettingChanged, HeadtrackingCameraSuspension.onActiveCameraSuspensionSettingChanged)
